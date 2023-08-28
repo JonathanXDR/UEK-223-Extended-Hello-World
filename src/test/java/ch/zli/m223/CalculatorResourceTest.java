@@ -8,14 +8,15 @@ import org.junit.jupiter.api.Test;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-public class GreetingResourceTest {
+public class CalculatorResourceTest {
 
     @Test
-    public void testAddition() {
+    public void testHelloEndpoint() {
         given()
-          .when().get("/calculator/add/12/30")
-          .then()
-             .statusCode(200)
-             .body(is("42"));
+                .when().get("/hello")
+                .then()
+                .statusCode(200)
+                .body(is("Hello from RESTEasy Reactive"));
     }
+
 }
